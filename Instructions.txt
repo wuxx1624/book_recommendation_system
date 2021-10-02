@@ -1,0 +1,25 @@
+1. Download the Neeva.zip file and upzip it.
+2. The folder contains three main items, main.py, utilities.py and model folder
+   The main.py is the primiry script to train or test the system. 
+   The utilities.py contains some functions required to run the train or test.
+   The model folder contains pre-trained models.
+3. Required libraries for the system:
+   python3,  pandas, numpy, sklearn, pickle, scikit-surprise
+4. Train the model:
+   python main.py train
+   * there is a pre-trained model in the ./model folder. You can directly test the system.
+5. Test the model:
+   python main.py eval user_id, query_category, query_item(optional)
+   user_id: the query user id, start from 1
+   query category can be one of the following: [tag_name, book_id, author, title, popularity, rating]
+   query item is the one of the item in the query category.
+   
+   e.g,. query based on tag 'fantasy' for user 1
+   python main.py eval 1 tag_name fantasy
+   
+   e.g,. query based on book_id 258 for user 1
+   python main.py eval 1 book_id 258
+
+   e.g,. query based on popularity for user 1
+   python main.py eval 1 popularity
+   * If query based on the popularity or rating, query_item is not needed.
